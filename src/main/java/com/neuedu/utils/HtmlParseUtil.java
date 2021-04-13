@@ -53,6 +53,7 @@ public class HtmlParseUtil {//Parse 解析
         String transformation;
         String evaluate;
         String time;
+        Poem poem;
 
         String url = "http://www.haoshiwen.org/" + parsePomeUrl( keywords );
         Document document = Jsoup.parse( new URL( url ), 30000 );
@@ -74,7 +75,7 @@ public class HtmlParseUtil {//Parse 解析
         evaluate = elementEvaluate.ownText();
 
         //System.out.println(evaluate);
-        Poem poem = new Poem( title,poet,context,transformation,evaluate,time );
+        poem = new Poem( title,poet,context,transformation,evaluate,time );
 
         return poem;
     }
